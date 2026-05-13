@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        .header {
+        text-align: center;
+         grid-area: header ;
+         background-color: aqua;
+         height: 10 px;
+         width: 50 px;
+        }
+
+        /* The grid container */
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'header header header header header header' 'left left middle middle right right' 'leftlow leftlow midlow midlow rightlow rightlow' 'footer footer footer footer footer footer';
+            grid-column-gap: 10px;
+            /* if you want gap between the columns */
+            grid-row-gap: 10px;
+        }
+
+        .left,
+        .middle,
+        .right,
+        .leftlow,
+        .midlow,
+        .rightlow {
+            padding: 15px;
+            height: 150px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Style the left column */
+        .left {
+            grid-area: left;
+        }
+
+        /* Style the middle column */
+        .middle {
+            grid-area: middle;
+        }
+
+        /* Style the right column */
+        .right {
+            grid-area: right;
+        }
+
+        .leftlow {
+            grid-area: leftlow;
+        }
+
+        .midlow {
+            grid-area: midlow;
+        }
+
+        .rightlow {
+            grid-area: rightlow;
+        }
+
+        .left:hover,
+        .middle:hover,
+        .right:hover,
+        .leftlow:hover,
+        .midlow:hover,
+        .rightlow:hover {
+            opacity: 0.8;
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        /* Style the footer */
+        .footer {
+            font-weight: bold;
+            grid-area: footer;
+            background-color: #90f75c;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-areas: 'header header header header header header' 'left left left left left left' 'middle middle middle middle middle middle' 'right right right right right right' 'footer footer footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <h2>Header</h2>
+        </div>
+        <div class="left" style="background-color:#69bbfa;">kolom 1</div>
+        <div class="middle" style="background-color:#ff8484;">kolom 2</div>
+        <div class="right" style="background-color:#0a8af3;">kolom 3</div>
+        <div class="leftlow" style="background-color:#f30ac4;">kolom 4</div>
+        <div class="midlow" style="background-color:#e4f006;">kolom 5</div>
+        <div class="rightlow" style="background-color:#ffbe5c;">kolom 6</div>
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+    </table>
+</body>
+
+</html>
